@@ -1,0 +1,270 @@
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(243 244 246);
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.shadow {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.error {
+    color: rgb(255, 97, 97);
+    font-size: 12px;
+}
+
+.justify-end {
+    margin-left: auto;
+}
+
+.btn {
+    height: 40px;
+    width: 80px;
+    padding: 4px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.2s;
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.btn:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    filter: brightness(85%);
+}
+
+.btn-red {
+    background-color: rgb(250, 110, 110);
+    color: white;
+}
+
+.table-container {
+    width: 80%;
+    overflow-x: auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 100px;
+}
+
+.table-row {
+    color: rgb(75, 75, 75);
+    transition: 0.2s;
+    border-radius: 100%;
+}
+
+.table-row:hover {
+    color: #009879;
+    transition: 0.2s;
+}
+
+.table-header {
+    display: flex;
+    align-content: space-between;
+    flex-direction: row;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 50%;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    color: rgb(36, 35, 42);
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 10px;
+    padding-left: 16px;
+    border: 2px solid transparent;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+    background: rgb(251, 251, 251);
+    transition: all 0.1s ease 0s;
+}
+
+.input:focus {
+    border: 2px solid rgb(124, 138, 255);
+    outline: none;
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    position: relative;
+    border-radius: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal .modal-body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    position: relative;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+.modal .modal-header {
+    padding: 5px;
+    border-bottom: 1px solid rgb(201, 201, 201) !important;
+}
+
+.modal .modal-header .modal-title {
+    color: rgb(75, 75, 75);
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* Uploader */
+.image-upload {
+    max-width: 100%;
+    min-height: 100px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 4px dashed #bbbbbb;
+    border-radius: 10px;
+}
+
+.image-upload--over {
+    border-style: solid;
+}
+
+.image-upload-input {
+    display: none;
+}
+
+.image-upload-thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+}
+
+.image-upload-thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+}
